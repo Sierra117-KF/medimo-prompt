@@ -1,0 +1,7 @@
+# AI コーディングツール固有の設定ファイル
+# AGENTS.md を真のルールファイルとし、各AI向けファイルは各自がローカルで管理
+CLAUDE.md
+GEMINI.md
+
+# Claude設定フォルダ
+.claude/
