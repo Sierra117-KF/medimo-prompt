@@ -60,19 +60,20 @@
 
 ```
 medimo-prompt/
-├── README.md        # プロジェクト説明
-├── AGENTS.md
-├── CLAUDE.md
-├── .claude
-│   └── settings.json
-├── doc/             # プロジェクトドキュメント
-└── prompt/
-    ├── medical-record/   # カルテ生成用プロンプト
-    │   ├── pt.md         # 理学療法士用
-    │   ├── ot.md         # 作業療法士用
-    │   └── st.md         # 言語聴覚士用
-    ├── meeting.md        # リハミーティング用プロンプト
-    └── pre-discharge-home-visit.md        # 退院前訪問指導用
+├── README.md
+├── AGENTS.md            # AIコーディングツール用ガイドライン
+├── LICENSE              # ライセンス情報
+├── .gitignore           # Git除外設定
+├── _legacy/             # 過去のファイル
+├── doc/                 # プロジェクトドキュメント
+│   └── sample01.md      # サンプルドキュメント
+└── prompt/              # プロンプト本体
+    ├── medical-record/  # カルテ生成用プロンプト
+    │   ├── pt.md        # 理学療法士用
+    │   ├── ot.md        # 作業療法士用
+    │   └── st.md        # 言語聴覚士用
+    ├── meeting.md       # リハビリミーティング用
+    └── pre-discharge-home-visit.md  # 退院前訪問指導用
 ```
 
 ## ガイドライン
