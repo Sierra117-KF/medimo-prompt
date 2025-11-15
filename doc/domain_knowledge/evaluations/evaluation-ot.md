@@ -51,7 +51,7 @@ ROM-T（右/左）：肩関節屈曲90/105 伸展10/20 外転60/110 内転10/15 
 
 ## 上肢機能評価
 - 握力: 握力の強さを"kg"で判定。小数点第一位まで記載
-- BBT: びーびーてぃー。Box and Block Testの略。1分間、片手でブロックを運搬できる個数を測定
+- BBT: びーびーてぃー。Box and Block Testの略。1分間でブロックを運搬できる個数を測定
 - ARAT: あらーと。Action Research Arm Testの略。上肢機能評価。57点満点
 - STEF: すてふ。Simple Test for Evaluating Hand Functionの略。上肢機能評価。100点満点
 
