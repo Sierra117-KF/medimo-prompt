@@ -44,28 +44,32 @@ Markdown記法とXMLタグを組み合わせた独自の構造化フォーマッ
 
 ```
 medimo-prompt/
-├── README.md
-├── AGENTS.md                     # AIコーディングツール用ガイドライン
-├── LICENSE                       # ライセンス情報
-├── .gitignore                    # Git除外設定
-├── _legacy/                      # 過去のファイル
-├── doc/                          # プロジェクトドキュメント
-│   ├── domain_knowledge/         # ドメイン知識定義
-│   │   ├── evaluations/          # 評価方法の定義（職種別）
-│   │   │   └── evaluation-pt.md  # 理学療法士用評価
-│   │   ├── location/             # 院内の場所名の定義
-│   │   │   └── location-pt.md    # 理学療法士用場所定義
-│   │   └── tools/                # 使用物品・機器の定義
-│   │       └── tools-pt.md       # 理学療法士用物品定義
-│   └── sample-prompt/            # サンプルドキュメント
-│       └── sample01.md
-└── prompt/                          # プロンプト本体
-    ├── medical-record/              # カルテ生成用プロンプト
-    │   ├── pt.md                    # 理学療法士用
-    │   ├── ot.md                    # 作業療法士用
-    │   └── st.md                    # 言語聴覚士用
-    ├── meeting.md                   # リハビリミーティング用
-    └── pre-discharge-home-visit.md  # 退院前訪問指導用
+├── _legacy/                         # 過去のファイル
+├── doc/                             # プロジェクトドキュメント
+│   └── domain_knowledge/            # ドメイン知識定義
+│       ├── evaluations/             # 評価方法の定義（職種別）
+│       │   ├── ot-evaluation.md     # 作業療法士用
+│       │   ├── pt-evaluation.md     # 理学療法士用
+│       │   └── st-evaluation.md     # 言語聴覚士用
+│       ├── location/                # 院内の場所名の定義（職種別）
+│       │   ├── ot-location.md       # 作業療法士用
+│       │   ├── pt-location.md       # 理学療法士用
+│       │   └── st-location.md       # 言語聴覚士用
+│       └── tools/                   # 使用物品・機器の定義（職種別）
+│           ├── ot-tools.md          # 作業療法士用
+│           ├── pt-tools.md          # 理学療法士用
+│           └── st-tools.md          # 言語聴覚士用
+├── prompt/                          # プロンプト本体
+│   ├── medical-record/              # カルテ生成用プロンプト
+│   │   ├── ot-prompt-latest.md      # 作業療法士用
+│   │   ├── pt-prompt-latest.md      # 理学療法士用
+│   │   └── st-prompt-latest.md      # 言語聴覚士用
+│   ├── meeting.md                   # リハビリミーティング用
+│   └── pre-discharge-home-visit.md  # 退院前訪問指導用
+├── .gitignore                       # Git除外設定
+├── AGENTS.md                        # AIコーディングツール用ガイドライン
+├── LICENSE                          # ライセンス情報
+└── README.md
 ```
 
 ### ドメイン知識の管理
@@ -96,9 +100,9 @@ medimo-prompt/
 ### 基本的な使い方
 
 1. 目的に応じたプロンプトファイルを選択
-   - 理学療法士のカルテ: `prompt/medical-record/pt.md`
-   - 作業療法士のカルテ: `prompt/medical-record/ot.md`
-   - 言語聴覚士のカルテ: `prompt/medical-record/st.md`
+   - 理学療法士のカルテ: `prompt/medical-record/pt-prompt-latest.md`
+   - 作業療法士のカルテ: `prompt/medical-record/ot-prompt-latest.md`
+   - 言語聴覚士のカルテ: `prompt/medical-record/st-prompt-latest.md`
    - リハミーティング記録: `prompt/meeting.md`
    - 退院前訪問指導記録: `prompt/pre-discharge-home-visit.md`
 
@@ -135,18 +139,53 @@ Issueを作成する際は、以下の情報を含めてください：
 
 ### Pull Request
 
-コードの改善や新機能の追加は、Pull Requestを通じて行います：
+コードの改善や新機能の追加は、Pull Requestを通じて行います。
 
-1. **Forkとクローン**
+#### 初回セットアップ
+
+1. **リポジトリをFork**
+   - GitHubで本リポジトリのページにアクセス
+   - 右上の「Fork」ボタンをクリックして、自分のアカウントにFork
+
+2. **Forkしたリポジトリをクローン**
    ```bash
-   git clone https://github.com/Sierra117-KF/medimo-prompt
+   # 自分のForkをクローン（YOUR_USERNAMEを自分のGitHubユーザー名に置き換え）
+   git clone https://github.com/YOUR_USERNAME/medimo-prompt.git
    cd medimo-prompt
+   ```
+
+3. **上流リポジトリを追加**
+   ```bash
+   # オリジナルのリポジトリをupstreamとして追加
+   git remote add upstream https://github.com/Sierra117-KF/medimo-prompt.git
+   
+   # 確認
+   git remote -v
+   # origin    https://github.com/YOUR_USERNAME/medimo-prompt.git (fetch)
+   # origin    https://github.com/YOUR_USERNAME/medimo-prompt.git (push)
+   # upstream  https://github.com/Sierra117-KF/medimo-prompt.git (fetch)
+   # upstream  https://github.com/Sierra117-KF/medimo-prompt.git (push)
+   ```
+
+#### 変更の作成とPR送信
+
+1. **最新の変更を取得**
+   ```bash
+   # 上流リポジトリの最新状態を取得
+   git fetch upstream
+   git checkout main
+   git merge upstream/main
    ```
 
 2. **ブランチ作成**
    ```bash
    git checkout -b feature/your-feature-name
    ```
+   
+   ブランチ名の例：
+   - `feature/add-ot-evaluation` - 新機能追加
+   - `fix/pt-prompt-typo` - バグ修正
+   - `docs/update-readme` - ドキュメント更新
 
 3. **変更の実施**
    - `AGENTS.md`のガイドラインに従って変更を行う
@@ -160,26 +199,47 @@ Issueを作成する際は、以下の情報を含めてください：
    ```
    
    コミットメッセージは以下の形式を推奨：
-   - `feat:` 新機能追加
-   - `fix:` バグ修正
+   - `feat:` 新しいコンテンツを追加
+   - `fix:` 修正
    - `docs:` ドキュメント変更
-   - `refactor:` リファクタリング
 
-5. **プッシュとPR作成**
+5. **自分のForkにプッシュ**
    ```bash
+   # 自分のFork（origin）にプッシュ
    git push origin feature/your-feature-name
    ```
-   
-   GitHubでPull Requestを作成し、以下を記載：
-   - 変更の目的と背景
-   - 変更内容の詳細
-   - テスト結果
-   - 関連するIssue番号（該当する場合）
 
-6. **レビューとマージ**
+6. **Pull Request作成**
+   - GitHubで自分のForkのページにアクセス
+   - 「Compare & pull request」ボタンが表示されるのでクリック
+   - PRの説明に以下を記載：
+     - 変更の目的と背景
+     - 変更内容の詳細
+     - テスト結果
+     - 関連するIssue番号（該当する場合は`#123`のように記載）
+   - 「Create pull request」をクリック
+
+7. **レビューとマージ**
    - プロジェクトオーナーがレビューを行います
    - 医療専門性に関わる変更は、関連職種の担当者によるレビューも実施
+   - 修正依頼があれば、同じブランチで追加コミットを行い、再度プッシュ
    - 承認後、オーナーがマージします
+
+#### 複数のPRを作成する場合
+
+新しいPRを作成する際は、必ず最新のmainブランチから新しいブランチを作成してください：
+
+```bash
+# mainブランチに戻る
+git checkout main
+
+# 上流の最新状態を取得してマージ
+git fetch upstream
+git merge upstream/main
+
+# 新しいブランチを作成
+git checkout -b feature/another-feature
+```
 
 ### 貢献時の注意事項
 
