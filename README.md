@@ -45,25 +45,24 @@ Markdown記法とXMLタグを組み合わせた独自の構造化フォーマッ
 ```
 medimo-prompt/
 ├── README.md
-├── AGENTS.md                     # AIコーディングツール用ガイドライン
-├── LICENSE                       # ライセンス情報
-├── .gitignore                    # Git除外設定
-├── _legacy/                      # 過去のファイル
-├── doc/                          # プロジェクトドキュメント
-│   ├── domain_knowledge/         # ドメイン知識定義
-│   │   ├── evaluations/          # 評価方法の定義（職種別）
-│   │   │   └── evaluation-pt.md  # 理学療法士用評価
-│   │   ├── location/             # 院内の場所名の定義
-│   │   │   └── location-pt.md    # 理学療法士用場所定義
-│   │   └── tools/                # 使用物品・機器の定義
-│   │       └── tools-pt.md       # 理学療法士用物品定義
-│   └── sample-prompt/            # サンプルドキュメント
-│       └── sample01.md
+├── AGENTS.md                        # AIコーディングツール用ガイドライン
+├── LICENSE                          # ライセンス情報
+├── .gitignore                       # Git除外設定
+├── _legacy/                         # 過去のファイル
+├── doc/                             # プロジェクトドキュメント
+│   ├── domain_knowledge/            # ドメイン知識定義
+│   │   ├── evaluations/             # 評価方法の定義（職種別）
+│   │   │   └── evaluation-pt.md     # 理学療法士用評価
+│   │   ├── location/                # 院内の場所名の定義
+│   │   │   └── location-pt.md       # 理学療法士用場所定義
+│   │   └── tools/                   # 使用物品・機器の定義
+│   │       └── tools-pt.md          # 理学療法士用物品定義
+│   └── sample-prompt/               # サンプルドキュメント
 └── prompt/                          # プロンプト本体
     ├── medical-record/              # カルテ生成用プロンプト
-    │   ├── pt.md                    # 理学療法士用
-    │   ├── ot.md                    # 作業療法士用
-    │   └── st.md                    # 言語聴覚士用
+    │   ├── pt-prompt-latest.md      # 理学療法士用
+    │   ├── ot-prompt-latest.md      # 作業療法士用
+    │   └── st-prompt-latest.md      # 言語聴覚士用
     ├── meeting.md                   # リハビリミーティング用
     └── pre-discharge-home-visit.md  # 退院前訪問指導用
 ```
