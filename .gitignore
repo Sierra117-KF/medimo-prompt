@@ -5,3 +5,6 @@ GEMINI.md
 
 # Claude設定フォルダ
 .claude/
+
+# サンプルプロンプト
+doc/sample-prompt/
