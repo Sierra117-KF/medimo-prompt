@@ -95,9 +95,9 @@ medimo-prompt/
 ### 基本的な使い方
 
 1. 目的に応じたプロンプトファイルを選択
-   - 理学療法士のカルテ: `prompt/medical-record/pt.md`
-   - 作業療法士のカルテ: `prompt/medical-record/ot.md`
-   - 言語聴覚士のカルテ: `prompt/medical-record/st.md`
+   - 理学療法士のカルテ: `prompt/medical-record/pt-prompt-latest.md`
+   - 作業療法士のカルテ: `prompt/medical-record/ot-prompt-latest.md`
+   - 言語聴覚士のカルテ: `prompt/medical-record/st-prompt-latest.md`
    - リハミーティング記録: `prompt/meeting.md`
    - 退院前訪問指導記録: `prompt/pre-discharge-home-visit.md`
 
@@ -160,7 +160,7 @@ Issueを作成する際は、以下の情報を含めてください：
    
    コミットメッセージは以下の形式を推奨：
    - `feat:` 新機能追加
-   - `fix:` バグ修正
+   - `fix:` 修正
    - `docs:` ドキュメント変更
    - `refactor:` リファクタリング
 
