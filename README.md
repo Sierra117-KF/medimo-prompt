@@ -47,6 +47,7 @@ medimo-prompt/
 ├── _legacy/                         # 過去のファイル
 ├── doc/                             # プロジェクトドキュメント
 │   └── domain_knowledge/            # ドメイン知識定義
+│       ├── outdoor-walking          # 屋外歩行
 │       ├── evaluations/             # 評価方法の定義（職種別）
 │       │   ├── ot-evaluation.md     # 作業療法士用
 │       │   ├── pt-evaluation.md     # 理学療法士用
@@ -60,12 +61,12 @@ medimo-prompt/
 │           ├── pt-tools.md          # 理学療法士用
 │           └── st-tools.md          # 言語聴覚士用
 ├── prompt/                          # プロンプト本体
-│   ├── medical-record/              # カルテ生成用プロンプト
-│   │   ├── ot-prompt-latest.md      # 作業療法士用
-│   │   ├── pt-prompt-latest.md      # 理学療法士用
-│   │   └── st-prompt-latest.md      # 言語聴覚士用
 │   ├── meeting.md                   # リハビリミーティング用
-│   └── pre-discharge-home-visit.md  # 退院前訪問指導用
+│   ├── pre-discharge-home-visit.md  # 退院前訪問指導用
+│   └── medical-record/              # カルテ生成用プロンプト
+│       ├── ot-prompt-latest.md      # 作業療法士用
+│       ├── pt-prompt-latest.md      # 理学療法士用
+│       └── st-prompt-latest.md      # 言語聴覚士用
 ├── .gitignore                       # Git除外設定
 ├── AGENTS.md                        # AIコーディングツール用ガイドライン
 ├── LICENSE                          # ライセンス情報
