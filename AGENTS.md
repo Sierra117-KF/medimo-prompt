@@ -60,19 +60,18 @@
 
 ```
 medimo-prompt/
-├── _legacy/                         # 過去のファイル
 ├── doc/                             # プロジェクトドキュメント
 │   └── domain_knowledge/            # ドメイン知識定義
 │       ├── outdoor-walking          # 屋外歩行
-│       ├── evaluations/             # 評価方法の定義（職種別）
+│       ├── evaluations/             # 評価方法（職種別）
 │       │   ├── ot-evaluation.md     # 作業療法士用
 │       │   ├── pt-evaluation.md     # 理学療法士用
 │       │   └── st-evaluation.md     # 言語聴覚士用
-│       ├── location/                # 院内の場所名の定義（職種別）
+│       ├── location/                # 院内の場所名（職種別）
 │       │   ├── ot-location.md       # 作業療法士用
 │       │   ├── pt-location.md       # 理学療法士用
 │       │   └── st-location.md       # 言語聴覚士用
-│       └── tools/                   # 使用物品・機器の定義（職種別）
+│       └── tools/                   # 使用物品・機器（職種別）
 │           ├── ot-tools.md          # 作業療法士用
 │           ├── pt-tools.md          # 理学療法士用
 │           └── st-tools.md          # 言語聴覚士用
@@ -441,18 +440,20 @@ medimo-prompt/
 
 ```
 doc/domain_knowledge/
-├── evaluations/          # 評価方法の定義（職種別）
-│   ├── evaluation-pt.md  # 理学療法士用評価
-│   ├── evaluation-ot.md  # 作業療法士用評価（今後追加予定）
-│   └── evaluation-st.md  # 言語聴覚士用評価（今後追加予定）
-├── location/             # 院内の場所名の定義
-│   ├── location-pt.md    # 理学療法士用場所定義
-│   ├── location-ot.md    # 作業療法士用場所定義（今後追加予定）
-│   └── location-st.md    # 言語聴覚士用場所定義（今後追加予定）
-└── tools/                # 使用物品・機器の定義
-    ├── tools-pt.md       # 理学療法士用物品定義
-    ├── tools-ot.md       # 作業療法士用物品定義（今後追加予定）
-    └── tools-st.md       # 言語聴覚士用物品定義（今後追加予定）
+├── outdoor-walking.md    # 屋外歩行
+├── evaluations/          # 評価方法（職種別）
+│   ├── pt-evaluation.md  # 理学療法士用
+│   ├── ot-evaluation.md  # 作業療法士用
+│   └── st-evaluation.md  # 言語聴覚士用
+├── location/             # 院内の場所名（職種別）
+│   ├── pt-location.md    # 理学療法士用
+│   ├── ot-location.md    # 作業療法士用
+│   └── st-locationt.md   # 言語聴覚士用
+└── tools/                # 使用物品・機器（職種別）
+    ├── pt-tools.md       # 理学療法士用
+    ├── ot-tools.md       # 作業療法士用
+    └── st-tools.md       # 言語聴覚士用
+
 ```
 
 各職種で使用する場所、物品、評価方法が異なるため、職種別にファイルを分けて管理します。
@@ -499,7 +500,7 @@ doc/domain_knowledge/
 </domain_knowledge>
 ```
 
-職種別のプロンプト（例: `prompt/medical-record/pt.md`）には、対応する職種のドメイン知識ファイル（例: `location-pt.md`, `tools-pt.md`, `evaluation-pt.md`）の内容を統合します。
+職種別のプロンプト（例: `prompt/medical-record/pt-prompt-latest.md`）には、対応する職種のドメイン知識ファイル（例: `location/pt-location.md`, `tools/pt-tools.md`, `evaluations/pt-evaluation.md`）の内容を統合します。
 
 #### ドメイン知識の更新プロセス
 

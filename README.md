@@ -44,7 +44,6 @@ Markdown記法とXMLタグを組み合わせた独自の構造化フォーマッ
 
 ```
 medimo-prompt/
-├── _legacy/                         # 過去のファイル
 ├── doc/                             # プロジェクトドキュメント
 │   └── domain_knowledge/            # ドメイン知識定義
 │       ├── outdoor-walking          # 屋外歩行
@@ -95,7 +94,7 @@ medimo-prompt/
 
 ### 前提条件
 
-- 対応するAIモデル（Claude、GPT-4など）へのアクセス
+- AIコーディングツールの使用（任意）
 - UTF-8エンコーディングに対応したテキストエディタ
 
 ### 基本的な使い方
