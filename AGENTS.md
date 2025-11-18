@@ -82,7 +82,7 @@ medimo-prompt/
 │   │   ├── ot-prompt-latest.md      # 作業療法士用: 最新
 │   │   ├── pt-prompt-latest.md      # 理学療法士用: 最新
 │   │   └── st-prompt-latest.md      # 言語聴覚士用: 最新
-│   └── snap-shot/              # プロンプトのバージョン履歴
+│   └── snap-shot/                   # プロンプトのバージョン履歴
 ├── .gitignore                       # Git除外設定
 ├── AGENTS.md                        # AIコーディングツール用ガイドライン
 ├── LICENSE                          # ライセンス情報
