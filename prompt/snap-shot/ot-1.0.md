@@ -196,7 +196,7 @@ P)
 </structure>
 
 <formatting_rules>
-- plain textで出力し、markdown形式は使用しない
+- plane textで出力し、markdown形式は使用しない
 - 空白行を挿入しない
 - 箇条書きは「・」で始める
 </formatting_rules>
@@ -354,7 +354,7 @@ P)
 
 <important_reminders>
 - 「患者」という言葉は絶対に使用しない
-- 出力はplain textのみ。markdown記法は一切使用しない
+- 出力はplane textのみ。markdown記法は一切使用しない
   - 見出し記号（#, ##など）は絶対に使用しない
   - 箇条書きは「・」のみ使用し、「-」「*」「+」は使用しない
   - 強調記号（**, __, *, _）は使用しない

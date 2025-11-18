@@ -44,34 +44,46 @@ Markdown記法とXMLタグを組み合わせた独自の構造化フォーマッ
 
 ```
 medimo-prompt/
-├── _legacy/                         # 過去のファイル
 ├── doc/                             # プロジェクトドキュメント
 │   └── domain_knowledge/            # ドメイン知識定義
 │       ├── outdoor-walking          # 屋外歩行
-│       ├── evaluations/             # 評価方法の定義（職種別）
+│       ├── evaluations/             # 評価方法（職種別）
 │       │   ├── ot-evaluation.md     # 作業療法士用
 │       │   ├── pt-evaluation.md     # 理学療法士用
 │       │   └── st-evaluation.md     # 言語聴覚士用
-│       ├── location/                # 院内の場所名の定義（職種別）
+│       ├── location/                # 院内の場所名（職種別）
 │       │   ├── ot-location.md       # 作業療法士用
 │       │   ├── pt-location.md       # 理学療法士用
 │       │   └── st-location.md       # 言語聴覚士用
-│       └── tools/                   # 使用物品・機器の定義（職種別）
+│       └── tools/                   # 使用物品・機器（職種別）
 │           ├── ot-tools.md          # 作業療法士用
 │           ├── pt-tools.md          # 理学療法士用
 │           └── st-tools.md          # 言語聴覚士用
 ├── prompt/                          # プロンプト本体
-│   ├── meeting.md                   # リハビリミーティング用
-│   ├── pre-discharge-home-visit.md  # 退院前訪問指導用
-│   └── medical-record/              # カルテ生成用プロンプト
-│       ├── ot-prompt-latest.md      # 作業療法士用
-│       ├── pt-prompt-latest.md      # 理学療法士用
-│       └── st-prompt-latest.md      # 言語聴覚士用
+│   ├── home-visit-latest.md         # 退院前訪問指導用: 最新
+│   ├── meeting-latest.md            # リハビリミーティング用: 最新
+│   ├── medical-record/              # カルテ生成用プロンプト
+│   │   ├── ot-prompt-latest.md      # 作業療法士用: 最新
+│   │   ├── pt-prompt-latest.md      # 理学療法士用: 最新
+│   │   └── st-prompt-latest.md      # 言語聴覚士用: 最新
+│   └── snap-shot/                   # プロンプトのバージョン履歴
 ├── .gitignore                       # Git除外設定
 ├── AGENTS.md                        # AIコーディングツール用ガイドライン
 ├── LICENSE                          # ライセンス情報
 └── README.md
 ```
+
+### スナップショット管理
+
+本プロジェクトでは、プロンプトの変更履歴を体系的に管理するため、`prompt/snap-shot/`ディレクトリにスナップショットを保管しています。
+
+- **保管内容**: プロンプトを更新するごとに、変更前の状態をスナップショットとして記録
+- **-latest ファイル**: `*-latest.md` という接尾辞が付与されたプロンプトが**変更履歴を保存する最新版**です
+- **参照用途**: 以前のバージョンが必要な場合、`snap-shot/`ディレクトリから対応するバージョンを参照できます
+
+例：
+- 現在の最新プロンプト: `prompt/medical-record/pt-prompt-latest.md`
+- 過去の安定版: `prompt/snap-shot/pt-1.0.md`, `prompt/snap-shot/pt-1.5.md` など
 
 ### ドメイン知識の管理
 
@@ -95,7 +107,7 @@ medimo-prompt/
 
 ### 前提条件
 
-- 対応するAIモデル（Claude、GPT-4など）へのアクセス
+- AIコーディングツールの使用（任意）
 - UTF-8エンコーディングに対応したテキストエディタ
 
 ### 基本的な使い方
