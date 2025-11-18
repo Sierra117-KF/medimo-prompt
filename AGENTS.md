@@ -82,7 +82,7 @@ medimo-prompt/
 │   │   ├── ot-prompt-latest.md      # 作業療法士用: 最新
 │   │   ├── pt-prompt-latest.md      # 理学療法士用: 最新
 │   │   └── st-prompt-latest.md      # 言語聴覚士用: 最新
-│   └── medical-record/              # プロンプトのバージョン履歴
+│   └── snap-shot/              # プロンプトのバージョン履歴
 ├── .gitignore                       # Git除外設定
 ├── AGENTS.md                        # AIコーディングツール用ガイドライン
 ├── LICENSE                          # ライセンス情報
@@ -386,8 +386,8 @@ medimo-prompt/
    - 例: 「患者」という言葉は絶対に使用しない、markdown記法は一切使用しない
 
 2. **出力形式の再確認**
-   - 出力形式（plane text、セクション区切りなど）を再度明示
-   - 例: 出力はplane textのみ、各セクション(S, O, A, P)の区別を明確にする
+   - 出力形式（plain text、セクション区切りなど）を再度明示
+   - 例: 出力はplain textのみ、各セクション(S, O, A, P)の区別を明確にする
 
 3. **ドメイン知識の参照指示**
    - `<domain_knowledge>`セクションの情報を参照して誤変換を修正することを再確認
